@@ -23,52 +23,16 @@ In timing diagram Q0 is changing as soon as the negative edge of clock pulse is 
 ![image](https://github.com/naavaneetha/4-BIT-RIPPLE-COUNTER/assets/154305477/85e1958a-2fc1-49bb-9a9f-d58ccbf3663c)
 
 **Procedure**
-
-/* module ripple(
-input wire clk, // Clock input
-output reg [3:0] count // 4-bit counter output
-);
-// Counter logic
-always @(posedge clk) begin
-if (count == 4'b1111) // Reset when count reaches 15
-count <= 4'b0000;
-else
-count <= count + 1; // Increment count
-end
-endmodule
-// Testbench
-module RippleCounter_tb;
-// Inputs
-reg clk;
-// Outputs
-wire [3:0] count;
-// Instantiate the counter
-RippleCounter uut(
-.clk(clk),
-.count(count)
-);
-// Clock generation
-initial begin
-clk = 0;
-forever #5 clk = ~clk; // Toggle clock every 5 time units
-end
-// Stimulus
-initial begin
-// Wait for a few clock cycles
-#10;
-// Display header
-$display("Time | Count");
-$display("-----------------");
-// Functional table testing
-// Increment count 16 times and display the count
-repeat (16) begin
-#5; // Wait for one clock cycle
-$display("%4d | %b", $time, count);
-end
-// End simulation
-$finish;
-end
-endmodule*/
+```
+1.Write the Verilog code in Quartus Prime for the 4-bit ripple counter.
+2.Compile and run the program to ensure it is error-free.
+3.Generate the RTL schematic to visualize the flip-flop connections.
+4.Create nodes for the clock input (CLK) and counter outputs (Q0, Q1, Q2, Q3).
+5.Simulate the design for multiple clock cycles to observe the ripple effect.
+6.Verify the timing diagrams to ensure the counter toggles through all states (0000 to
+1111).
+7.Save the RTL schematic and timing diagrams for documentation and validation
+```
 
 **PROGRAM**
 
@@ -124,6 +88,7 @@ endmodule
 
  
 */
+```
 
 **RTL LOGIC FOR 4 Bit Ripple Counter**
 
